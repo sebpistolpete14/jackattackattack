@@ -1,0 +1,69 @@
+.gallery-container {
+  display: flex;
+  align-items: center; /* Centers buttons vertically with the scroller */
+  gap: 10px; 
+}
+
+.image-scroller {
+  /* Set a fixed width for the *visible* area (viewport) */
+  width: 1536px; /* Example width: 3 images * 160px width/margin each = 480px */
+  overflow-x: auto; /* This hides the scrollbar and clips extra images */
+  white-space: nowrap; /* Ensures images stay in one horizontal line */
+  display: grid; /* Use CSS Grid for the internal layout */
+  grid-auto-flow: column; /* Items flow horizontally */
+  /* This ensures all items have the same calculated width and behavior */
+  grid-auto-columns: 1fr; 
+  scroll-snap-type: x mandatory; /* Forces snapping on the horizontal axis */
+  scrollbar-width: none; 
+  scroll-behavior: smooth;
+  will-change: scroll-position; /* Hint to browser to optimize for scrolling */
+}
+
+.image-scroller::-webkit-scrollbar {
+  display: none; /* Hides scrollbar in Chrome/Safari */
+}
+
+.image-scroller a {
+    /* No flex properties needed here anymore, Grid handles the sizing */
+    display: inline-block; 
+    /* This makes sure images fill the anchor tag completely */
+    width: 100%; 
+ scroll-snap-align: center; /* Snaps the image to the center of the viewport */
+  scroll-snap-stop: always;  /* Prevents skipping multiple images on fast scrolls */
+}
+
+.image-scroller img {
+  height: 512px; /* Fixed height for consistency */
+  width: 512px; /* Fixed width for consistency */
+  margin: 0 5px; /* Adds 5px margin on left and right for spacing */
+  object-fit: cover; /* Ensures images don't get distorted while maintaining size */
+}
+
+#back-btn, #next-btn {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+#back-btn:hover, #next-btn:hover {
+  transform: scale(1.1); /* Subtle grow effect on hover */
+}
+.gallery-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  
+  /* --- Added styles for centering on the page --- */
+  margin: 0 auto; /* Centers the block horizontally within the body/parent */
+  justify-content: center; /* Centers the items *inside* the container if they don't fill the width */
+}
+
+.corner-gif {
+  position: fixed;
+  bottom: 0px; /* Distance from the bottom edge */
+  right: 0px;  /* Distance from the right edge */
+  z-index: 9999; /* Ensures it stays on top of other content */
+  pointer-events: none; /* Optional: allows users to click elements behind it */
+}
+
+.corner-gif img {
+  width: 100px; /* Adjust size as needed */
+  height: auto;
+}

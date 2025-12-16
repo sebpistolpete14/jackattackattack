@@ -4,9 +4,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
 <style>
 body {
-  background-color: black;
+  background-image: url('77.jpg');
 }
 
 .center {
@@ -52,19 +53,32 @@ img {
 
 <p style="color:white;"  class="centertext">CHOOSE THE JACK ATTACK YOU WANT TO PLAY.</p>
 
-<a href="./vol1attack.html"><img src="./buttons/98.png" class="center"></a>
+<div class="gallery-container">
+  <button id="back-btn">Back</button>
+  
+  <div class="image-scroller" id="scroller">
+    <!-- Wrap each image in a link tag -->
+    <a href="vol1attack.html"><img src="buttons/98.png" alt="Description 1"></a>
+    <a href="vol2attack.html"><img src="buttons/100.png" alt="Description 2"></a>
+    <a href="vol3attack.html"><img src="buttons/102.png" alt="Description 3"></a>
+    <a href="flashattack.html"><img src="buttons/104.png" alt="Description 3"></a>
 
-<a href="./vol2attack.html"><img src="./buttons/100.png" class="center"></a>
+    <a href="sportsattack.html"><img src="buttons/sportsbutton.png" alt="Description 3"></a>
+    <a href="tvattack.html"><img src="buttons/tvbutton.png" alt="Description 3"></a>
+    <!-- Add more images/links as needed -->
+  </div>
 
-<a href="./vol3attack.html"><img src="./buttons/102.png" class="center"></a>
+  <button id="next-btn">Next</button>
+</div>
 
-<a href="./sportsattack.html"><img src="./buttons/sportsbutton.png" class="center"></a>
+<div class="corner-gif">
+  <img src="jack.gif" alt="Corner Animation">
+</div>
 
-<a href="./tvattack.html"><img src="./buttons/tvbutton.png" class="center"></a>
-
-<a href="./flashattack.html"><img src="./buttons/104.png" class="center"></a>
 
 <p style="color:white;"  class="centertext">LEGAL STUFF: This is a fan project, and it is not affiliated with Jackbox Games.</p>
+
+<script src="buttons.js"></script>
 
 </body>
 </html>
